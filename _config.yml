@@ -1,5 +1,5 @@
 full_rebuild: true
-name: Gridster
+name: Blufish的部落格
 description: the material experience for jekyll
 destination: jekyllbuild
 url: #place url
