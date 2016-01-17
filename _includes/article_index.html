@@ -3,7 +3,7 @@
     Every Post type get's their own little settings.
 -->
 <article>
-    {% if post.homedisplay == "iframe" %}
+    <!--{% if post.homedisplay == "iframe" %}
         {% if post.type == "vimeo" %}
             {% if post.vimeo-embed %}
                 <div class="video-container">
@@ -35,7 +35,7 @@
                 </a>
             {% endif %}
         {% endif %}
-    {% else %}
+    {% else %}-->
         {% if post.featimg %}
                 <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
                     {% if post.featimg contains '.png'%}
@@ -47,7 +47,7 @@
                     {% endif %}
                 </a>
         {% endif %}
-    {% endif %}
+    <!--{% endif %}-->
     <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
     <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}">
         <h1>{{ post.title }}</h1>
