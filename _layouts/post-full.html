@@ -14,27 +14,6 @@
             <div class="content full">
                 <div class="content-container">
                     <article>
-                        <!--{% if page.type == "vimeo" %}
-                            {% if page.vimeo-embed %}
-                                <div class="video-container">
-                                    {{ page.vimeo-embed }}
-                                </div>
-                            {% endif %}
-                        {% elsif page.type == "youtube" %}
-                            {% if page.yt-video-id %}
-                                <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/{{page.yt-video-id}}?feature=player_detailpage" allowfullscreen></iframe>
-                                </div>
-                            {% endif %}
-                        {% elsif page.type == "image" or page.type == "gallery" %}
-                            {% if page.featimg %}
-                                <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
-                            {% endif %}
-                        {% elsif page.type == "audio" %}
-                            {% if page.audio-embed %}
-                                {{ page.audio-embed }}
-                            {% endif %}
-                        {% endif %}-->
                         {% if page.type == "image" or page.type == "gallery" %}
                             {% if page.featimg %}
                                 <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
