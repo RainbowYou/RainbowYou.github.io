@@ -1,18 +1,14 @@
+---
+layout: page
+title: About
+permalink: /About/
+feature-img: "img/sample_feature_img_2.png"
+---
+
 # Fengzhichu Theme
 
 A jekyll theme for personal blog which based on [Type theme](https://github.com/rohanchandra/type-theme) and [ibireme's blog](http://blog.ibireme.com). Add several useful features. Fengzhichu Theme is powered by [Jekyll](http://jekyllrb.com/) and freely
 hosted in [Github pages](https://pages.github.com/).
-
-## Check the live demo
-
-[Fengzhichu Theme Live Demo](https://fengzhichu.com)
-
-## Screenshots
-![Home page](img/Screenshot1.png)
-![Pst page](img/Screenshot2.png)
-![Archive page](img/Screenshot3.png)
-![Category page](img/Screenshot4.png)
-![About page](img/Screenshot5.png)
 
 ## How to use it
 * Star & Fork the [repo](https://github.com/fengzhichu/fengzhichu-theme).
@@ -20,13 +16,13 @@ hosted in [Github pages](https://pages.github.com/).
 * You can delete gh-pages branch if you want.
 * Clone your <b>master branch</b> to local directory.
 * Custom the '_config.yml' to your style.
-* Install jekyll can refer 'ruby_install_by_rvm.sh', modify to suit your need.
 * Run jekyll serve -w.
 
 ## Customization
 
 ###_config.yml
 Some important configurations.
+
 * imageurl: Randomly change image which display on top of site.
   * By default image changes everytime when open your site or reflash it. If you want to change image daily or weekly, just append '/daily' or 'weekly' to imageurl.
 * title: Display on browse tab.
@@ -40,27 +36,33 @@ Some important configurations.
 
 ###Tags
 Add new tag.
+
 * Annotate your post entry front-matter block as usual:
-```yml
----
-layout: post
-title: How To Use Tags And Categories On GitHub Pages Without Plugins
-category: programming
-tags: [github, github-pages, jekyll]
----
+
 ```
+		---
+		layout: post
+		title: How To Use Tags And Categories On GitHub Pages Without Plugins
+		category: programming
+		tags: [github, github-pages, jekyll]
+		---
+```
+
 * Add an entry in your _data/tags.yml for every tag.
-```yml
-- slug: github-pages
-  name: GitHub Pages
+
 ```
+		- slug: github-pages
+		  name: GitHub Pages
+```
+
 * Create a .md file which name is your Tag slug for every tag.
-```yml
----
-layout: blog_by_tag
-tag: github-pages
-permalink: /blog/tag/github-pages/
----
+
+```
+		---
+		layout: blog_by_tag
+		tag: github-pages
+		permalink: /blog/tag/github-pages/
+		---
   ```
 
 ###Categories

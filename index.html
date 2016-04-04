@@ -1,58 +1,71 @@
 ---
-layout: index-full
-description: the good site of life
+layout: default
 ---
-{% for post in paginator.posts %}
-    {% include article_index.html %}
-{% endfor %}
+<div class="home">
+  <article class="home-feature-image" >
+  <div style="background-image: url('{{ site.baseurl }}/{{ site.theme.place_holder_image }}')"/>
+  <header style="background-image: url('{{ site.imageurl }}')">
+    <p class="call-out-content"> {{ site.theme.header_text }} </p>
+  </header>
+  </article>
 
-{% if paginator.total_pages > 1 %}
-    <div class="pagination">
-        <!-- link to first page -->
-        {% if paginator.total_pages > 3 %}
-            {% if paginator.page == 1 %}
-                <span class="btn disabled"><i class="fa fa-angle-double-left"></i></span>
-            {% else %}
-                <a class="btn" href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-double-left"></i></a>
-            {% endif %}
-        {% endif %}
+	<div class="posts">
+	{% for post in paginator.posts %}
+		{% include post_tags_category.html %}
+		<div class="post-teaser">
+		  <header>
+		    <h1>
+		      <a id="post-link-trans" class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+		        {{ post.title }}
+		      </a>
+		    </h1>
+		    <p id="subtitletrans" class="subtitlecontainer">
+		      <a class="subtitle">{{ post.date | date: "%Y年%m月%-d日" }}</a>
+		      {% if post.author %} | <a class="subtitle" href="{{ site.baseurl }}/about/">{{ post.author }}</a>{% endif %}
+		      {% if post.category and post.tags %} | <a class="subtitle">{{ category_content }}</a> <a class="subtitle">{{ tags_content }}</a>{% endif %}
+		    </p>
+		  </header>
+		  <div class="excerpt">
+		  {% assign num = post.content | number_of_words %}
+		  {% if  num  < site.theme.visiblewords %}
+		    {{ post.content }}
+		  {% else %}
+		    {{ post.content | truncatewords: site.theme.visiblewords }}
+		    <p>
+		    <a class="text" href="{{ post.url | prepend: site.baseurl }}">
+		      {{ site.theme.str_continue_reading }}
+		    </a>
+		    </p>
+		  {% endif %}
+		  </div>
+		</div>
+		{% endfor %}
+	</div>
 
-        <!-- previous link -->
-        {% if paginator.previous_page %}
-            <a class="btn prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-left"></i></a>
-        {% else %}
-            <span class="btn disabled"><i class="fa fa-angle-left"></i></span>
-        {% endif %}
+	<div class="wp-pagenavi">
+	    <span class='pages'>第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
 
-        <!-- number links -->
-        {% capture start %}
-            {{ paginator.page | minus: 3 }}
-        {% endcapture %}
+	    {% if paginator.previous_page %}
+	    	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" > « </a>
+	    {% endif %}
 
-        {% for i in (1..paginator.total_pages) limit: 5 offset: start %}
-            {% if i == paginator.page %}
-                <span class="btn disabled">{{ i }}</span>
-            {% elsif i == 1 %}
-                <a class="btn" href="{{ site.baseurl }}/">{{ i }}</a>
-            {% else %}
-                <a class="btn" href="/page/{{ i }}">{{ i }}</a>
-            {% endif %}
-        {% endfor %}
+	      {% if paginator.page == 1 %}
+	        <span class="current">1</span>
+	      {% else %}
+	        <a class="page larger" href="/">1</a>
+	      {% endif %}
+	   
+	    {% for count in (2..paginator.total_pages) %}
+	        {% if count == paginator.page %}
+	          <span class="current">{{ count }}</span>
+	        {% else %}
+	          <a class="page larger" href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a>
+	        {% endif %}
+	    {% endfor %}
 
-        <!-- next link -->
-        {% if paginator.next_page %}
-            <a class="btn next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-angle-right"></i></a>
-        {% else %}
-            <span class="btn disabled"><i class="fa fa-angle-right"></i></span>
-        {% endif %}
+	    {% if paginator.next_page %}
+	    	<a class="nextpostslink" rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" > » </a>
+	    {% endif %}
 
-        <!-- last page link -->
-        {% if paginator.total_pages > 3 %}
-            {% if paginator.page == paginator.total_pages %}
-                <span class="btn disabled"><i class="fa fa-angle-double-right"></i></span>
-            {% else %}
-                <a class="btn" href="{{ site.baseurl | replace: '//', '/' }}/page/{{paginator.total_pages}}"><i class="fa fa-angle-double-right"></i></a>
-            {% endif %}
-        {% endif %}
-    </div>
-{% endif %}
+	</div>
+</div>
