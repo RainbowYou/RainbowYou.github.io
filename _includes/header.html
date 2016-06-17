@@ -1,10 +1,9 @@
-<header id="main-header" data-height-onload="66">
+<header id="main-header" class="navbar navbar-default" data-height-onload="66">
 	<div class="container clearfix et_menu_container">
 		<div class="logo_container">
 			<span class="logo_helper"></span>
 			<a href="{{ site.baseurl }}/">
-				<!--img src="http://blog.ibireme.com/wp-content/uploads/2015/05/logo1.png" alt="Garan no dou" id="logo" data-height-percentage="54" /-->
-				<img src="../img/logo.jpg" alt="Garan no dou" id="logo" data-height-percentage="54" />
+				<img src="{{ '/img/logo.png' | prepend: site.baseurl }}" alt="Bluefish" id="logo" data-height-percentage="54" />
 				{{ site.theme.yoursitetitle }}
 			</a>
 		</div>
@@ -25,11 +24,21 @@
 					</li>
 					{% endif %}
 					{% endfor %}
-					<!-- Social icons from Font Awesome, if enabled -->
+
+					<!--code snippets-->
 					<li>
+						<a class="page-link" href="{{ '/code-snippets' | prepend: site.baseurl }}">Code-Snippets</a>
+					</li>
+
+					<li>
+						<a class="page-link" href="{{ '/album' | prepend: site.baseurl }}">我的图库</a>
+					</li>
+
+					<!-- Social icons from Font Awesome, if enabled -->
+					<!--<li>
 						<a class="page-link" href="">联系我</a>
 						<ul class="children">{% include icons.html %}</ul>
-					</li>
+					</li>-->
 
 				</ul>
 			</nav>

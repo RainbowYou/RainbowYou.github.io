@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="container">
+  <br /><br /><br /><br />
+  <!--first category-->
+  <div class="bf-ct-div">
+      <!--<ul>
+        {% for member in site.data.members %}
+          <li>
+            <a class="cg-index">{{ member.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>-->
+      <ul class="bf-ul">
+        {% for cgs in site.data.categories %}
+        {% assign cg = cgs[1] %}
+        <li class="bf-ct-li">
+          <a class="index-l1" href="javascript:void(0)">{{ cg.category1 }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+  <!--second category-->
+  <div>
+
+  </div>
+  <!--code snippets area-->
+  <div>
+
+  </div>
+</div>

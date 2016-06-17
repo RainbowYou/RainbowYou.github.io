@@ -1,26 +1,27 @@
 # SITE CONFIGURATION
-baseurl: "/RainbowYou.github.io" # Set it to "" if use for personal site. The subpath of your site, e.g. /blog/
+baseurl: "" # Set it to "" if use for personal site. The subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 imageurl: "https://source.unsplash.com/category/nature/2600x500" #"https://unsplash.it/2600/500?random"
+
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: RainbowYou的部落格
+  title: Bluefish
   #avatar: avatar.png
   hometitle: 首页 #display on navigation menu.
-  yoursitetitle: RainbowYou
+  yoursitetitle: Bluefish
   gravatar: # Email MD5 hash
   description: "used by search engines" # used by search engines
-  visiblewords: 150
+  visiblewords: 100
   # Header and footer text
   header_text: >
-     Life is too short to passing by
+     
 
   header_text_feature_image: img/sample_feature_img.png
   place_holder_image: img/sample_feature_img.png
   footer_text: >
-   <a href="https://yoursite.com">YOUR TITLE</a>
+   <a href="https://AIBluefisher.github.io">AIBluefisher</a>
 
   # Icons
   rss: false
@@ -30,7 +31,7 @@ theme:
   dribbble:
   facebook:
   flickr:
-  github: "RainbowYou"
+  github: "AIBluefisher"
   weibo:
   google_plus:
   instagram:
@@ -41,7 +42,7 @@ theme:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: ""
+  twitter:
   wordpress:
   youtube:
 
@@ -56,7 +57,7 @@ theme:
   str_email: "Email"
   #str_next: "Next"
   #str_prev: "Prev"
-  str_continue_reading: "Continue Reading..."
+  str_continue_reading: "继续阅读"
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
@@ -66,7 +67,7 @@ theme:
   post_navigation: true
 
 # PAGINATION
-enforce_ssl: "fengzhichu.com"
+enforce_ssl: "AIBluefisher.github.io"
 paginate: 5
 paginate_path: "blog/page:num"
 permalink: blog/:title/
@@ -78,7 +79,8 @@ sechby:
 
 # BUILD SETTINGS
 markdown: redcarpet
-highlighter: pygments
+#highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed

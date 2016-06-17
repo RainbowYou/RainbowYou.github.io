@@ -7,20 +7,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 	<!-- CSS -->
+	<!--<link rel="stylesheet" href="{{"/css/bootstrap.min.css" | prepend: site.baseurl}}" />-->
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 	<link rel='stylesheet' id='divi-style-css'  href="{{ "/css/style.css" | prepend: site.baseurl }}" type='text/css' media='all' />
 	<link rel="stylesheet" href="{{ "/css/post.style.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/css/custom.css" | prepend: site.baseurl }}" />
+
 
 	<script type='text/javascript' src="{{ "/js/jquery.js" | prepend: site.baseurl }}"></script>
+	<script type='text/javascript' src="{{ "/js/snippets.js" | prepend: site.baseurl }}"></script>
 	<script type='text/javascript' src="{{ "/js/soundmanager2-nodebug-jsmin.js" | prepend: site.baseurl }}"></script>
-
 	<!--Favicon-->
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-	
-	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" /> 
-	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="icon" type="image/x-icon" /> 
-	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+
+	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" />
+	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
+	<link href="{{ "/favicon.ico" | prepend: site.baseurl }}" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
 	<!-- Canonical -->
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 

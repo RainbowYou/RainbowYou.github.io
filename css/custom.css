@@ -1,0 +1,9 @@
+/*list styles*/
+.bf-ul{list-style: none;}
+.bf-ct-li{line-height: 3em;}
+.bf-ct-li a{font-size: 1.3em;color:#000;}
+
+
+/*border div*/
+.bf-ct-div{border: 1px solid #rgb(24, 204, 48);overflow-y: scroll;max-height: 40em;width: 10em;}
+.bf-code-div{border: 1px solid rgb(191, 56, 129);}
